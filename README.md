@@ -8,7 +8,7 @@ I implemented the routing logic in [`main.cpp`](main.cpp), building on the cours
 
 - **Multi-pin net decomposition:** Kruskal's algorithm with Manhattan-distance edge weights and disjoint-set union to construct a rectilinear minimum spanning tree (RMST) and extract two-pin connections.
 - **Dynamic-programming initial routing:** congestion-aware monotonic paths, with connections processed by increasing bounding-box area and then half-perimeter wirelength.
-- **A* rerouting:** a bounded-length search heuristic with congestion penalties, accumulated congestion history, and virtual demand to account for concurrent routing activity.
+- **A\* rerouting:** a bounded-length search heuristic with congestion penalties, accumulated congestion history, and virtual demand to account for concurrent routing activity.
 - **Parallel rip-up and reroute:** an OpenMP task queue that prioritizes congested connections, serializes tasks belonging to the same net, and updates shared demand with atomic operations.
 - **Route refinement:** restoration of the best recorded 2D solution, followed by a stricter overflow-resolution pass that accepts replacement paths only when they fit the current 2D capacities.
 
